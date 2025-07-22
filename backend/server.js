@@ -10,9 +10,22 @@ const fileRoutes = require('./routes/files');
 const app = express();
 
 // Middleware to handle CORS
+const allowedOrigins = [
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:5173'
+    : process.env.CLIENT_URL,
+].filter(Boolean);
+
 app.use(
     cors({
-        origin: process.env.CLIENT_URL || '*',
+        origin: (origin, callback) => {
+      // Allow requests with no origin (like Postman or curl)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization'],
     })
