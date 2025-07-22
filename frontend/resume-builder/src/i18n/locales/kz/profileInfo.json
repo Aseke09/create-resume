@@ -1,0 +1,81 @@
+{
+  "profile": {
+    "heading": "Жеке ақпарат",
+    "fullName": "Аты-жөні",
+    "designation": "Мамандығы",
+    "summary": "Қысқаша сипаттама",
+    "summaryPlaceholder": "Қысқаша таныстыру жазыңыз",
+    "fullNamePlaceholder": "Жан",
+    "designationPlaceholder": "UI дизайнері"
+  },
+  "contactInfo": {
+      "title": "Байланыс ақпараты",
+      "address": "Мекенжай",
+      "addressPlaceholder": "Қысқаша мекенжай",
+      "email": "Электрондық пошта",
+      "phone": "Телефон нөмірі",
+      "website": "Портфолио / Веб-сайт"
+    },
+    "workExperience": {
+    "title": "Еңбек тәжірибесі",
+    "company": "Компания",
+    "role": "Лауазымы",
+    "startDate": "Басталу күні",
+    "endDate": "Аяқталу күні",
+    "description": "Сипаттама",
+    "descriptionPlaceholder": "Компаниядағы рөліңізді жазыңыз",
+    "add": "Жаңа еңбек тәжірибесін қосу"
+  },
+   "education": {
+    "title": "Білім",
+    "degree": "Дәреже",
+    "institution": "Оқу орны",
+    "startDate": "Басталу күні",
+    "endDate": "Аяқталу күні",
+    "add": "Білімді қосу"
+  },
+  "skills": {
+    "title": "Дағдылар",
+    "name": "Дағды атауы",
+    "namePlaceholder": "мысалы, Python",
+    "proficiency": "Деңгейі",
+    "add": "Дағдыны қосу"
+  },
+  "projects": {
+    "title": "Жобалар",
+    "titleLabel": "Жобаның атауы",
+    "titlePlaceholder": "мысалы, Портфолио сайты",
+    "description": "Сипаттама",
+    "descriptionPlaceholder": "Жоба туралы қысқаша сипаттама",
+    "github": "GitHub сілтемесі",
+    "liveDemo": "Дайын нұсқасының сілтемесі",
+    "add": "Жоба қосу"
+  },
+  "certifications": {
+    "title": "Сертификаттар",
+    "titleLabel": "Сертификат атауы",
+    "titlePlaceholder": "мысалы, Fullstack веб-әзірлеуші",
+    "issuer": "Ұйым",
+    "issuerPlaceholder": "мысалы, Coursera / Google",
+    "year": "Жылы",
+    "add": "Сертификатты қосу"
+  },
+   "additional": {
+  "title": "Қосымша ақпарат",
+  "languages": "Тілдер",
+  "languageLabel": "Тіл",
+  "languagePlaceholder": "мысалы, Ағылшын",
+  "proficiency": "Меңгеру деңгейі",
+  "addLanguage": "Тілді қосу",
+  "interests": "Қызығушылықтар",
+  "interestLabel": "Қызығушылық",
+  "interestPlaceholder": "мысалы, Оқу",
+  "addInterest": "Қызығушылықты қосу"
+},
+ "tabs": {
+    "templates": "Үлгілер",
+    "colors": "Түстер палитрасы",
+    "done": "Дайын"
+  }
+  
+}

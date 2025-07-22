@@ -1,0 +1,17 @@
+{
+  "logout": "Logout",
+   "add_new_resume": "Add New Resume",
+   "resume": {
+    "titlePlaceholder": "Resume title"
+  },
+  "change_theme": "Change Theme",
+  "delete": "Delete",
+  "preview_download": "Preview & Download",
+  "updating": "Updating...",
+  "save_exit": "Save & Exit",
+  "preview_and_download": "Preview & Download",
+  "next": "Next",
+  "change_color_theme": "Change Color Theme",
+  "download": "Download",
+  "alert": "Please complete the required fields"
+}

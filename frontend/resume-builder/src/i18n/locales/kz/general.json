@@ -1,0 +1,17 @@
+{
+  "logout": "Шығу",
+  "add_new_resume": "Жаңа түйіндеме жасаңыз",
+  "resume": {
+    "titlePlaceholder": "Түйіндеме атауы"
+  },
+  "change_theme": "Тақырыпты өзгерту",
+  "delete": "Жою",
+  "preview_download": "Алдын ала қарау және жүктеу",
+  "updating": "Жаңартылуда...",
+  "save_exit": "Сақтау және шығу",
+  "preview_and_download": "Алдын ала көру және жүктеу",
+  "next": "Келесі",
+  "change_color_theme": "Түс тақырыбын өзгерту",
+  "download": "Жүктеу",
+  "alert": "Қажетті өрістерді толтырыңыз"
+}

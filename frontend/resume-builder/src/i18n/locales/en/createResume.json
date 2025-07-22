@@ -1,0 +1,13 @@
+{
+  "createResume": {
+    "title": "Create New Resume",
+    "description": "Give your resume a title to get started. You can edit all details later.",
+    "resumeTitle": "Resume Title",
+    "placeholder": "e.g. Mike's Resume",
+    "button": "Create Resume"
+  },
+  "errors": {
+    "title_required": "Please enter a title.",
+    "generic": "Something went wrong. Please try again."
+  }
+}

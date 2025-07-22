@@ -1,0 +1,82 @@
+{
+  "profile": {
+    "heading": "Personal Information",
+    "fullName": "Full Name",
+    "designation": "Designation",
+    "summary": "Summary",
+    "professionalSummary": "Professional Summary",
+    "summaryPlaceholder": "Add short introduction",
+    "fullNamePlaceholder": "John",
+    "designationPlaceholder": "UI Designer"
+  },
+  "contactInfo": {
+      "title": "Contact Information",
+      "address": "Address",
+      "addressPlaceholder": "Short Address",
+      "email": "Email",
+      "phone": "Phone Number",
+      "website": "Portfolio / Website"
+    },
+  "workExperience": {
+    "title": "Work Experience",
+    "company": "Company",
+    "role": "Role",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "description": "Description",
+    "descriptionPlaceholder": "Write about your role in the company",
+    "add": "Add Work Experience"
+  },
+  "education": {
+    "title": "Education",
+    "degree": "Degree",
+    "institution": "Institution",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "add": "Add Education"
+  },
+  "skills": {
+    "title": "Skills",
+    "name": "Skill Name",
+    "namePlaceholder": "e.g., Python",
+    "proficiency": "Proficiency",
+    "add": "Add Skill"
+  },
+  "projects": {
+    "title": "Projects",
+    "titleLabel": "Project Title",
+    "titlePlaceholder": "e.g., Portfolio Website",
+    "description": "Description",
+    "descriptionPlaceholder": "Short description about the project",
+    "github": "GitHub Link",
+    "liveDemo": "Live Demo URL",
+    "add": "Add Project"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "titleLabel": "Certificate Title",
+    "titlePlaceholder": "e.g., Fullstack Web Developer",
+    "issuer": "Issuer",
+    "issuerPlaceholder": "e.g., Coursera / Google",
+    "year": "Year",
+    "add": "Add Certificate"
+  },
+  "additional": {
+    "title": "Additional Info",
+    "languages": "Languages",
+    "languageLabel": "Language",
+    "languagePlaceholder": "e.g. English",
+    "proficiency": "Proficiency",
+    "addLanguage": "Add Language",
+    "interests": "Interests",
+    "interestLabel": "Interest",
+    "interestPlaceholder": "e.g. Reading",
+    "addInterest": "Add Interest"
+  },
+  "tabs": {
+    "templates": "Templates",
+    "colors": "Color Palettes",
+    "done": "Done" 
+  }
+   
+}

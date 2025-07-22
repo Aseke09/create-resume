@@ -1,0 +1,15 @@
+{
+  "welcome_back": "С возвращением",
+  "login_description": "Пожалуйста, введите свои данные для входа",
+  "email_label": "Электронная почта",
+  "email_placeholder": "ivan@example.com",
+  "password_label": "Пароль",
+  "password_placeholder": "Минимум 8 символов",
+  "login_button": "ВОЙТИ",
+  "signup_prompt": "Еще нет аккаунта?",
+  "signup_button": "Зарегистрироваться",
+  "invalid_email": "Пожалуйста, введите действительный адрес электронной почты.",
+  "missing_password": "Пожалуйста, введите пароль.",
+  "generic_error": "Что-то пошло не так. Пожалуйста, попробуйте снова.",
+  "login_failed": "Не удалось войти. Пожалуйста, проверьте ваши данные."
+}

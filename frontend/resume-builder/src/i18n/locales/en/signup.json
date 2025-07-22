@@ -1,0 +1,23 @@
+{
+  "title": "Create an Account",
+  "subtitle": "Join us today by entering your details below.",
+  "full_name": "Full Name",
+  "email": "Email Address",
+  "password": "Password",
+  "placeholder": {
+    "full_name": "John",
+    "email": "john@example.com",
+    "password": "Min 8 Characters"
+  },
+  "submit": "SIGN UP",
+  "existing_account": "Already have an account?",
+  "login": "Login",
+  "error": {
+    "full_name_required": "Please enter a full name",
+    "invalid_email": "Please enter a valid email address.",
+    "password_required": "Please enter the password",
+    "general": "Something went wrong. Please try again.",
+    "user_exists": "User already exists",
+    "unknown": "Something went wrong. Please try again."
+  }
+}

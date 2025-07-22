@@ -1,0 +1,15 @@
+{
+  "welcome_back": "Қайта келдіңіз",
+  "login_description": "Кіру үшін деректеріңізді енгізіңіз",
+  "email_label": "Электрондық пошта",
+  "email_placeholder": "bolat@example.com",
+  "password_label": "Құпиясөз",
+  "password_placeholder": "Кемінде 8 таңба",
+  "login_button": "КІРУ",
+  "signup_prompt": "Тіркелгіңіз жоқ па?",
+  "signup_button": "Тіркелу",
+  "invalid_email": "Жарамды электрондық пошта мекенжайын енгізіңіз.",
+  "missing_password": "Құпиясөзді енгізіңіз.",
+  "generic_error": "Қате орын алды. Қайтадан көріңіз.",
+  "login_failed": "Кіру сәтсіз аяқталды. Мәліметтерді тексеріңіз."
+}

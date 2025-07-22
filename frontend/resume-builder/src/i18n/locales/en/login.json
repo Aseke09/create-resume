@@ -1,0 +1,15 @@
+{
+  "welcome_back": "Welcome Back",
+  "login_description": "Please enter your details to log in",
+  "email_label": "Email Address",
+  "email_placeholder": "john@example.com",
+  "password_label": "Password",
+  "password_placeholder": "Min 8 Characters",
+  "login_button": "LOGIN",
+  "signup_prompt": "Don't have an account?",
+  "signup_button": "Sign Up",
+  "invalid_email": "Please enter a valid email address.",
+  "missing_password": "Please enter the password.",
+  "generic_error": "Something went wrong. Please try again.",
+  "login_failed": "Failed to login. Please check your credentials."
+}

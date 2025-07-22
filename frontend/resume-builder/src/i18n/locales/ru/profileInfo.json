@@ -1,0 +1,81 @@
+{
+  "profile": {
+    "heading": "Личная информация",
+    "fullName": "Полное имя",
+    "designation": "Должность",
+    "summary": "Краткое описание",
+    "summaryPlaceholder": "Добавьте краткое введение",
+    "fullNamePlaceholder": "Иван",
+    "designationPlaceholder": "UI дизайнер"
+  },
+  "contactInfo": {
+      "title": "Контактная информация",
+      "address": "Адрес",
+      "addressPlaceholder": "Краткий адрес",
+      "email": "Электронная почта",
+      "phone": "Номер телефона",
+      "website": "Портфолио / Веб-сайт"
+    },
+    "workExperience": {
+    "title": "Опыт работы",
+    "company": "Компания",
+    "role": "Должность",
+    "startDate": "Дата начала",
+    "endDate": "Дата окончания",
+    "description": "Описание",
+    "descriptionPlaceholder": "Опишите вашу роль в компании",
+    "add": "Добавить опыт работы"
+  },
+   "education": {
+    "title": "Образование",
+    "degree": "Степень",
+    "institution": "Учебное заведение",
+    "startDate": "Дата начала",
+    "endDate": "Дата окончания",
+    "add": "Добавить образование"
+  },
+  "skills": {
+    "title": "Навыки",
+    "name": "Название навыка",
+    "namePlaceholder": "например, Python",
+    "proficiency": "Уровень владения",
+    "add": "Добавить навык"
+  },
+  "projects": {
+    "title": "Проекты",
+    "titleLabel": "Название проекта",
+    "titlePlaceholder": "например, Сайт портфолио",
+    "description": "Описание",
+    "descriptionPlaceholder": "Краткое описание проекта",
+    "github": "Ссылка на GitHub",
+    "liveDemo": "Ссылка на демо",
+    "add": "Добавить проект"
+  },
+  "certifications": {
+    "title": "Сертификаты",
+    "titleLabel": "Название сертификата",
+    "titlePlaceholder": "например, Fullstack веб-разработчик",
+    "issuer": "Выдано",
+    "issuerPlaceholder": "например, Coursera / Google",
+    "year": "Год",
+    "add": "Добавить сертификат"
+  },
+  "additional": {
+    "title": "Дополнительная информация",
+    "languages": "Языки",
+    "languageLabel": "Язык",
+    "languagePlaceholder": "например, Английский",
+    "proficiency": "Уровень владения",
+    "addLanguage": "Добавить язык",
+    "interests": "Интересы",
+    "interestLabel": "Интерес",
+    "interestPlaceholder": "например, Чтение",
+    "addInterest": "Добавить интерес"
+  },
+  "tabs": {
+    "templates": "Шаблоны",
+    "colors": "Цветовые палитры",
+    "done": "Готово"
+  }
+  
+}

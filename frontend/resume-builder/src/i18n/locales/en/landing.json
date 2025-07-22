@@ -1,0 +1,23 @@
+{
+  "appName": "Resume Builder",
+  "loginSignup": "Login / Sign Up",
+  "heading": "Build Your",
+  "subheading": "Resume Effortlessly",
+  "subheading2": "Craft a standout resume in minutes with our smart and intuitive resume builder.",
+  "getStarted": "Get Started",
+  "featuresTitle": "Features That Make You Shine",
+  "features": {
+    "editing": {
+      "title": "Easy Editing",
+      "description": "Update your resume sections with live preview and instant formating."
+    },
+    "templates": {
+      "title": "Beautiful Templates",
+      "description": "Choose from modern, professional templates that are easy to customize."
+    },
+    "export": {
+      "title": "One-Click Export",
+      "description": "Download your instantly as a high-quality PDF with one click."
+    }
+  }
+}

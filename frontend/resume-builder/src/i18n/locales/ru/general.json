@@ -1,0 +1,17 @@
+{
+  "logout": "Выйти",
+  "add_new_resume": "Создай новое резюме",
+  "resume": {
+    "titlePlaceholder": "Название резюме"
+  },
+  "change_theme": "Изменить тему",
+  "delete": "Удалить",
+  "preview_download": "Просмотр и загрузка",
+  "updating": "Обновление...",
+  "save_exit": "Сохранить и выйти",
+  "preview_and_download": "Предпросмотр и загрузка",
+  "next": "Далее",
+  "change_color_theme": "Изменить цветовую тему",
+  "download": "Скачать",
+  "alert": "Пожалуйста, заполните обязательные поля"
+}
