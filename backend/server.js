@@ -11,9 +11,8 @@ const app = express();
 
 // Middleware to handle CORS
 const allowedOrigins = [
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost:5173'
-    : process.env.CLIENT_URL,
+     'http://localhost:5173',
+     process.env.CLIENT_URL,
 ].filter(Boolean);
 
 app.use(
