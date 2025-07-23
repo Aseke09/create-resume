@@ -14,7 +14,14 @@ A full-stack web application that allows users to create, edit, and download pro
 
 - ## 🛠 Tech Stack
 
-- **Frontend**: React, TypeScript, Redux Toolkit, Tailwind CSS, i18next
-- **Backend**: Node.js, Express, MongoDB, Mongoose
-- **Image Handling**: Multer + GridFS
-- **Deployment**: Railway / Render / Vercel (optional)
+**Frontend:**
+- React + TypeScript
+- Redux Toolkit
+- Tailwind CSS
+- i18next (Localization)
+- Axios
+  
+  **Backend:**
+- Node.js + Express
+- MongoDB + Mongoose
+- Multer for file uploads (GridFS)
