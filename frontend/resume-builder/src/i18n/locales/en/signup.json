@@ -19,5 +19,11 @@
     "general": "Something went wrong. Please try again.",
     "user_exists": "User already exists",
     "unknown": "Something went wrong. Please try again."
-  }
+  },
+  "password_rules": {
+    "min_length": "At least 6 characters",
+    "has_letter": "Contains a letter",
+    "has_number": "Contains a number",
+    "no_spaces": "No spaces"
+}
 }

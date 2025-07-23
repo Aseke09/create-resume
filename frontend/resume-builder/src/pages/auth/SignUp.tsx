@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ChangeEvent, type FC, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Inputs/Input';
-import { validateEmail } from '../../utils/helper';
+import { validateEmail, validatePassword, validateFullName } from '../../utils/helper';
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
 import { useDispatch } from 'react-redux';
@@ -25,6 +25,14 @@ const SignUp: FC<SignUpProps> = ({ setCurrentPage }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
+
+  const [fullNameTouched, setFullNameTouched ] = useState(false);
+  const [emailTouched, setEmailTouched] = useState(false);
+  const [passwordTouched, setPasswordTouched] = useState(false);
+  
+  const isValidFullName = validateFullName(fullName);
+  const isEmailValid = validateEmail(email);
+  const passwordValidation = validatePassword(password);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -121,34 +129,63 @@ const SignUp: FC<SignUpProps> = ({ setCurrentPage }) => {
           <Input
             value={fullName}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setFullName(e.target.value)}
+            onBlur={() => setFullNameTouched(true)}
             label={t('full_name')}
             placeholder={t('placeholder.full_name')}
             type='text'
           />
-
+          {fullNameTouched && !isValidFullName && (
+            <p className="text-red-500 text-xs">{t('error.full_name_required')}</p>
+          )}
           <Input
             value={email}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+            onBlur={() => setEmailTouched(true)}
             label={t('email')}
             placeholder={t('placeholder.email')}
             type='text'
           />
+          {emailTouched && !isEmailValid && (
+            <p className="text-red-500 text-xs">{t('error.invalid_email')}</p>
+          )}
 
           <Input
             value={password}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+            onBlur={() => setPasswordTouched(true)}
             label={t('password')}
             placeholder={t('placeholder.password')}
             type='password'
             autoComplete='new-password'
           />
+
+          {passwordTouched && (
+            <ul className="text-xs mt-1 space-y-1">
+              <li className={passwordValidation.rules.minLength ? 'text-green-600' : 'text-red-500'}>
+                • {t('password_rules.min_length')}
+              </li>
+              <li className={passwordValidation.rules.hasLetter ? 'text-green-600' : 'text-red-500'}>
+                • {t('password_rules.has_letter')}
+              </li>
+              <li className={passwordValidation.rules.hasNumber ? 'text-green-600' : 'text-red-500'}>
+                • {t('password_rules.has_number')}
+              </li>
+              <li className={passwordValidation.rules.noSpaces ? 'text-green-600' : 'text-red-500'}>
+                • {t('password_rules.no_spaces')}
+              </li>
+            </ul>
+          )}
         </div>
 
         {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
 
-        <button type='submit' className='btn-primary'>
+        <button 
+          type='submit' 
+          className={`btn-primary ${(!isEmailValid || !passwordValidation.isValid) ? 'opacity-50 cursor-not-allowed' : ''}`}
+          disabled={!isEmailValid || !passwordValidation.isValid}
+        >  
           {t('submit')}
-        </button>
+         </button>
 
         <p className='text-[13px] text-slate-800 mt-3'>
           {t('existing_account')}{' '}

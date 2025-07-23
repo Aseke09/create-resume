@@ -4,13 +4,14 @@ import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa6';
 interface InputProps {
     value: string;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    onBlur?: () => void;
     label: string;
     placeholder: string;
     type: string;
     autoComplete?: string;
 }
 
-const Input: FC<InputProps> = ({ value, onChange, label, placeholder, type, autoComplete }) => {
+const Input: FC<InputProps> = ({ value, onChange, onBlur, label, placeholder, type, autoComplete }) => {
     const [showPassword, setShowPassword] = useState(false);
 
     const toggleShowPassword = () => {
@@ -29,6 +30,7 @@ const Input: FC<InputProps> = ({ value, onChange, label, placeholder, type, auto
                 className='w-full bg-transparent outline-none'
                 value={value}
                 onChange={(e) => onChange(e)}
+                onBlur={onBlur}
                 autoComplete={autoComplete || 'off'}
             />
 

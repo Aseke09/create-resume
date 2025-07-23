@@ -2,9 +2,38 @@ import moment from 'moment'
 import html2canvas from 'html2canvas'
 import type { LocalizedString } from './localization';
 
+export const validateFullName = (name: string) => {
+  const trimmed = name.trim();
+  const regex = /^[a-zA-Zа-яА-ЯёЁіІїЇңҢұҰөӨəӘ' -]{2,}$/u;
+  return trimmed.length > 0 && regex.test(trimmed);
+};
+
 export const validateEmail = (email: string) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
+  const trimmed = email.trim();
+  if (email !== trimmed || email.includes(' ')) return false;
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  return regex.test(email);
+};
+
+export const validatePassword = (password: string): {
+  isValid: boolean;
+  rules: {
+    minLength: boolean;
+    hasLetter: boolean;
+    hasNumber: boolean;
+    noSpaces: boolean;
+  };
+} => {
+  const rules = {
+    minLength: password.length >= 6,
+    hasLetter: /[A-Za-z]/.test(password),
+    hasNumber: /\d/.test(password),
+    noSpaces: !/\s/.test(password),
+  };
+
+  const isValid = Object.values(rules).every(Boolean);
+  return { isValid, rules };
 };
 
 export const getLightColorFromImage = (imageUrl: string): Promise<string> => {
