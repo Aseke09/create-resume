@@ -4,7 +4,7 @@ import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
 import { isAxiosError } from "axios";
 import toast from "react-hot-toast";
-import { captureElementAsImage, dataURLtoFile, fixTailwindColors, sanitizeFilename } from "../../utils/helper";
+import { captureElementAsImage, fixTailwindColors, sanitizeFilename } from "../../utils/helper";
 import type { RefObject } from "react";
 import type { RootState } from "../../store/store";
 import type { ResumeSummary } from "../../pages/home/types";
@@ -115,8 +115,7 @@ export const uploadResumeImages = createAsyncThunk<
     fixTailwindColors(resumeRef.current!);
     const dataUrl = await captureElementAsImage(resumeRef.current);
     
-    const file = dataURLtoFile(dataUrl, 'thumb.png');
-    console.log('file:', file);
+    // const file = dataURLtoFile(dataUrl, 'thumb.png');
 
     const thumbBlob = await (await fetch(dataUrl)).blob();
      if (thumbBlob.size === 0) throw new Error("Thumbnail blob is empty");

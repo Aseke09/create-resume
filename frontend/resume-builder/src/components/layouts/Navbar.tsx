@@ -2,7 +2,7 @@ import ProfileInfoCard from '../cards/ProfileInfoCard';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { FC } from 'react';
-// import LanguageSwitcher from '../LanguageSwitcher';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 interface NavbarProps {
   activeMenu?: string; 
@@ -22,7 +22,7 @@ const Navbar: FC<NavbarProps> = ({ activeMenu }) => {
           </h2>
         </Link>
         <div className='flex gap-6'>
-          {/* <LanguageSwitcher /> */}
+          <LanguageSwitcher />
           <ProfileInfoCard />
           </div> 
       </div> 

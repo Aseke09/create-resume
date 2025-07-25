@@ -23,17 +23,7 @@ const registerUser = async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        // let avatarId = null;
-        // if (file) {
-        //   avatarId = await new Promise((resolve, reject) => {
-        //     const stream = bucket().openUploadStream(
-        //       `${Date.now()}_${file.originalname}`,
-        //       { metadata: { field: 'profileImage' }}
-        //     );
-        //     stream.on('error', reject);
-        //     stream.end(file.buffer, () => resolve(stream.id.toString()))
-        //   })
-        // }
+       
         const user = await User.create({
             name,
             email,

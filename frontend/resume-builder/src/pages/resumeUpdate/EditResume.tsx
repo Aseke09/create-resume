@@ -71,7 +71,6 @@ const EditResume = () => {
       window.removeEventListener('resize', updateBaseWidth)
     }
   }, [dispatch, resumeId])
-  
   const handleSave = async () => {
   if (!resumeId || !resumeRef.current) return;
 

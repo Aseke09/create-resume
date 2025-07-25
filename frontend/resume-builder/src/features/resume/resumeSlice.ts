@@ -61,12 +61,20 @@ const resumeSlice = createSlice({
         const info = state.data.profileInfo;
 
         if (field === 'fullName' || field === 'designation' || field === 'summary') {
+          if (!info[field]) {
+            info[field] = {} as LocalizedString;
+          }
+
           (info[field] as LocalizedString)[locale] = value;
         }
       } else if (section === 'contactInfo') {
         const contact = state.data.contactInfo;
 
         if (field === 'location') {
+          if (!contact.location) {
+            contact.location = {} as LocalizedString;
+          }
+          
           (contact.location as LocalizedString)[locale] = value;
         }
       }

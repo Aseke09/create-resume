@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { LuPlus, LuTrash2 } from "react-icons/lu";
 import Input from "../../../components/Inputs/Input";
 import { useTranslation } from "react-i18next";
-import { normalizeLang } from "../../../utils/localization";
+import { getLocalizedString, normalizeLang } from "../../../utils/localization";
 import {
   addEducation,
   removeEducation,
@@ -79,7 +79,7 @@ const EducationDetailsForm: FC = () => {
                 label={t("education.degree")}
                 placeholder="B.Tech in Computer Science"
                 type="text"
-                value={education.degree?.[lang] || ""}
+                value={getLocalizedString(education.degree, lang)}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleLocalizedChange(index, 'degree', e.target.value)
                 }
@@ -89,7 +89,8 @@ const EducationDetailsForm: FC = () => {
                 label={t("education.institution")}
                 placeholder="XYZ University"
                 type="text"
-                value={education.institution?.[lang] || ""}
+                // value={education.institution?.[lang] || ""}
+                value={getLocalizedString(education.institution, lang)}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleLocalizedChange(index, 'institution', e.target.value)
                 }

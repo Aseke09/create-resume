@@ -3,7 +3,7 @@ import { LuPlus, LuTrash2 } from "react-icons/lu";
 import { useTranslation } from "react-i18next";
 import Input from "../../../components/Inputs/Input";
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { normalizeLang } from "../../../utils/localization";
+import { getLocalizedString, normalizeLang } from "../../../utils/localization";
 import { 
   addProjects,
   updateProjects,
@@ -58,7 +58,7 @@ import {
                   label={t("projects.titleLabel")}
                   placeholder={t("projects.titlePlaceholder")}
                   type="text"
-                  value={project.title[lang] || ""}
+                  value={getLocalizedString(project.title, lang)}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     handleLocalizedChange(index, 'title', e.target.value)
                   }
@@ -74,7 +74,7 @@ import {
                   placeholder={t("projects.descriptionPlaceholder")}
                   className="form-input w-full mt-1 p-2 border rounded text-sm"
                   rows={3}
-                  value={project.description[lang] || ""}
+                  value={getLocalizedString(project.description, lang)}
                   onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                     handleLocalizedChange(index, 'description', e.target.value)
                   }

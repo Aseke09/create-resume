@@ -2,7 +2,7 @@ import type { FC, ChangeEvent } from "react";
 import { LuPlus, LuTrash2 } from "react-icons/lu";
 import { useTranslation } from "react-i18next";
 import Input from "../../../components/Inputs/Input";
-import { normalizeLang } from "../../../utils/localization";
+import { getLocalizedString, normalizeLang } from "../../../utils/localization";
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import {
   addCertifications,
@@ -50,7 +50,7 @@ const CertificationInfoForm: FC = () => {
                 label={t("certifications.titleLabel")}
                 placeholder={t("certifications.titlePlaceholder")}
                 type="text"
-                value={certificate.title[lang] || ""}
+                value={getLocalizedString(certificate.title, lang)}
                 onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
                   handleLocalizedChange(index, "title", target.value)
                 }
@@ -60,7 +60,7 @@ const CertificationInfoForm: FC = () => {
                 label={t("certifications.issuer")}
                 placeholder={t("certifications.issuerPlaceholder")}
                 type="text"
-                value={certificate.issuer[lang] || ""}
+                value={getLocalizedString(certificate.issuer, lang)}
                 onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
                   handleLocalizedChange(index, "issuer", target.value)
                 }

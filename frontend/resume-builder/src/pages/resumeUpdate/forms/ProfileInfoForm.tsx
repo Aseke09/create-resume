@@ -4,7 +4,7 @@ import ProfilePhotoSelector from '../../../components/Inputs/ProfilePhotoSelecto
 import Input from '../../../components/Inputs/Input';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { updateProfileInfo, patchLocalized } from '../../../features/resume/resumeSlice';
-import { normalizeLang } from './../../../utils/localization';
+import { getLocalizedString, normalizeLang } from './../../../utils/localization';
 
 interface ProfileInfoFormProps {
   setProfileImgFile: (id: string | null) => void;
@@ -21,13 +21,7 @@ const ProfileInfoForm: FC<ProfileInfoFormProps> = ({
   const lang = normalizeLang(i18n.language);
 
   const [localImageId, setLocalImageId] = useState<string | null>(profileInfo.profilePreviewUrl ?? null);
-  // const { t, i18n } = useTranslation('profileInfo');
-  // const dispatch = useAppDispatch();
-
-  // const profileInfo = useAppSelector((state) => state.resume.data.profileInfo);
-  // const resumeId = useAppSelector((state) => state.resume.data?._id)
-  // const lang = normalizeLang(i18n.language);
-  
+ 
   const updateLocalizedField = (field: 'fullName' | 'designation' | 'summary', value: string) => {
     dispatch(
       patchLocalized({
@@ -67,7 +61,8 @@ const ProfileInfoForm: FC<ProfileInfoFormProps> = ({
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           <Input
-            value={profileInfo.fullName?.[lang] || ''}
+            // value={profileInfo.fullName?.[lang] || ''}
+            value={getLocalizedString(profileInfo.fullName, lang)}
             onChange={({ target }) => updateLocalizedField('fullName', target.value)}
             label={t('profile.fullName')}
             placeholder={t('profile.fullNamePlaceholder')}
@@ -75,7 +70,8 @@ const ProfileInfoForm: FC<ProfileInfoFormProps> = ({
           />
 
           <Input
-            value={profileInfo.designation?.[lang] || ''}
+            // value={profileInfo.designation?.[lang] || ''}
+            value={getLocalizedString(profileInfo.designation, lang)}
             onChange={({ target }) => updateLocalizedField('designation', target.value)}
             label={t('profile.designation')}
             placeholder={t('profile.designationPlaceholder')}
@@ -91,7 +87,8 @@ const ProfileInfoForm: FC<ProfileInfoFormProps> = ({
               placeholder={t('profile.summaryPlaceholder')}
               className='form-input'
               rows={4}
-              value={profileInfo.summary?.[lang] || ''}
+              // value={profileInfo.summary?.[lang] || ''}
+              value={getLocalizedString(profileInfo.summary, lang)}
               onChange={({ target }) => updateLocalizedField('summary', target.value)}
             />
           </div>

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import Input from "../../../components/Inputs/Input";
 import RatingInput from "../../../components/ResumeSections/RatingInput";
-import { normalizeLang } from "../../../utils/localization";
+import { getLocalizedString, normalizeLang } from "../../../utils/localization";
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import {
   addLanguages,
@@ -71,7 +71,7 @@ import {
                   label={t("additional.languageLabel")}
                   placeholder={t("additional.languagePlaceholder")}
                   type="text"
-                  value={lan.name?.[lang] || ""}
+                  value={getLocalizedString(lan.name, lang)}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     handleLanguageChange(index, 'name', e.target.value)
                   }
@@ -135,7 +135,7 @@ import {
                   label={t("additional.interestLabel")}
                   placeholder={t("additional.interestPlaceholder")}
                   type="text"
-                  value={interest.name?.[lang] || ""}
+                  value={getLocalizedString(interest.name, lang)}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     handleInterestsChange( index, e.target.value )
                   }

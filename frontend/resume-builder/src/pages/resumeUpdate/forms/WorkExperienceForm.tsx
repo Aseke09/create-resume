@@ -8,7 +8,7 @@ import {
 } from '../../../features/resume/resumeSlice';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import type { FC } from "react";
-import { normalizeLang } from './../../../utils/localization';
+import { getLocalizedString, normalizeLang } from './../../../utils/localization';
 
 const WorkExperienceForm: FC = () => {
   const { t, i18n } = useTranslation('profileInfo');
@@ -56,7 +56,7 @@ const WorkExperienceForm: FC = () => {
                 label={t("workExperience.company")}
                 placeholder="ABC Corp"
                 type="text"
-                value={experience.company?.[lang] || ''}
+                value={getLocalizedString(experience.company, lang)}
                 onChange={(e) =>
                   handleLocalizedChange(index, 'company', e.target.value)
                 }
@@ -66,7 +66,7 @@ const WorkExperienceForm: FC = () => {
                 label={t("workExperience.role")}
                 placeholder="Frontend Developer, Java Developer"
                 type="text"
-                value={experience.role?.[lang] || ''}
+                value={getLocalizedString(experience.role, lang)}
                 onChange={(e) => handleLocalizedChange(index, 'role', e.target.value)}
               />
 
@@ -98,7 +98,7 @@ const WorkExperienceForm: FC = () => {
                 placeholder={t("workExperience.descriptionPlaceholder")}
                 className="form-input w-full mt-1"
                 rows={3}
-                value={experience.description?.[lang] || ''}
+                value={getLocalizedString(experience.description, lang)}
                 onChange={(e) =>
                   handleLocalizedChange(index, 'description', e.target.value)
                 }

@@ -18,7 +18,7 @@ import ProjectInfo from '../ResumeSections/ProjectInfo';
 import { formatYearMonth } from './../../utils/helper';
 import type { ResumeData } from '../../types/resume';
 import { useTranslation } from 'react-i18next';
-import type { LocalizedString } from '../../utils/localization';
+import { getLocalizedString, type LocalizedString } from '../../utils/localization';
 
 
 const DEFAULT_THEME = ['#EBFDFF', '#A1F4FD', '#CEFAFE', '#00B8D8', '#4A5565'];
@@ -108,8 +108,12 @@ const TemplateOne: FC<TemplateOneProps> = ({
               )}
             </div>
 
-            <h2 className='text-xl font-bold mt-3'>{resumeData.profileInfo.fullName?.[lang] || ''}</h2>
-            <p className='text-sm text-center'>{resumeData.profileInfo.designation?.[lang] || ''}</p>
+            <h2 className='text-xl font-bold mt-3'>
+              {getLocalizedString(resumeData.profileInfo.fullName, lang)}
+            </h2>
+            <p className='text-sm text-center'>
+              {getLocalizedString(resumeData.profileInfo.designation, lang)}
+            </p>
           </div>
 
           <div className='my-6 mx-6'>
@@ -117,7 +121,7 @@ const TemplateOne: FC<TemplateOneProps> = ({
               <ContactInfo 
                  icon={<LuMapPinHouse />} 
                  iconBG={themeColors[2]} 
-                 value={resumeData.contactInfo.location?.[lang] || ''} 
+                 value={getLocalizedString(resumeData.contactInfo.location, lang)} 
               />
               <ContactInfo 
                  icon={<LuMail />} 
@@ -141,10 +145,12 @@ const TemplateOne: FC<TemplateOneProps> = ({
                   iconBG={themeColors[2]} 
                   value={resumeData.contactInfo.github} />
               )}
-              <ContactInfo 
+              {resumeData.contactInfo.website && (
+                <ContactInfo 
                   icon={<LuRss />} 
                   iconBG={themeColors[2]} 
                   value={resumeData.contactInfo.website} />
+              )}
             </div>
 
             <div className='mt-5'>
@@ -152,8 +158,8 @@ const TemplateOne: FC<TemplateOneProps> = ({
               {resumeData.education.map((data, index) => (
                 <EducationInfo
                   key={`education_${index}`}
-                  degree={data.degree?.[lang] || ''}
-                  institution={data.institution?.[lang] || ''}
+                  degree={getLocalizedString(data.degree, lang)}
+                  institution={getLocalizedString(data.institution, lang)}
                   duration={`${formatYearMonth(data.startDate)} - ${formatYearMonth(data.endDate)}`}
                 />
               ))}
@@ -164,7 +170,7 @@ const TemplateOne: FC<TemplateOneProps> = ({
               <LanguageSection
                 languages={resumeData.languages.map((langItem) => ({
                   ...langItem,
-                  name: langItem.name[lang] || ''
+                  name: getLocalizedString(langItem.name, lang)
                 }))}
                 accentColor={themeColors[3]}
                 bgColor={themeColors[2]}
@@ -177,7 +183,9 @@ const TemplateOne: FC<TemplateOneProps> = ({
         <div className='col-span-8 pt-10 mr-10 pb-5'>
           <div>
             <Title translationKey='profile.summary' color={themeColors[1]} />
-            <p className='text-sm font-medium'>{resumeData.profileInfo.summary?.[lang] || ''}</p>
+            <p className='text-sm font-medium'>
+              {getLocalizedString(resumeData.profileInfo.summary, lang)}
+            </p>
           </div>
 
           <div className='mt-4'>
@@ -185,11 +193,11 @@ const TemplateOne: FC<TemplateOneProps> = ({
             {resumeData.workExperience.map((data, index) => (
               <WorkExperience
                 key={`work_${index}`}
-                company={data.company?.[lang] || ''}
-                role={data.role?.[lang] || ''}
+                company={getLocalizedString(data.company, lang)}
+                role={getLocalizedString(data.role, lang)}
                 duration={`${formatYearMonth(data.startDate)} - ${formatYearMonth(data.endDate)}`}
                 durationColor={themeColors[4]}
-                description={data.description?.[lang] || ''}
+                description={getLocalizedString(data.description, lang)}
               />
             ))}
           </div>
@@ -203,8 +211,8 @@ const TemplateOne: FC<TemplateOneProps> = ({
                   .map((project, index) => (
                     <ProjectInfo
                       key={`project_${index}`}
-                      title={project.title?.[lang] || ''}
-                      description={project.description?.[lang] || ''}
+                      title={getLocalizedString(project.title, lang)}
+                      description={getLocalizedString(project.description, lang)}
                       githubLink={project.github}
                       liveDemoUrl={project.liveDemo}
                       bgColor={themeColors[2]}
@@ -219,7 +227,7 @@ const TemplateOne: FC<TemplateOneProps> = ({
             <SkillSection
               skills={resumeData.skills.map((skill) => ({
                 ...skill,
-                name: skill.name[lang] || '',
+                name: getLocalizedString(skill.name, lang),
               }))}
               accentColor={themeColors[3]}
               bgColor={themeColors[2]}
@@ -235,8 +243,8 @@ const TemplateOne: FC<TemplateOneProps> = ({
                   .map((data, index) => (
                     <CertificationInfo
                       key={`cert_${index}`}
-                      title={data.title?.[lang] || ''}
-                      issuer={data.issuer?.[lang] || ''}
+                      title={getLocalizedString(data.title, lang)}
+                      issuer={getLocalizedString(data.issuer, lang)}
                       year={data.year}
                       bgColor={themeColors[2]}
                     />
@@ -245,12 +253,12 @@ const TemplateOne: FC<TemplateOneProps> = ({
               )}
             </div>
 
-          {resumeData.interests.length > 0 && resumeData.interests[0].name?.[lang]?.trim() !== '' && (
+          {resumeData.interests.some(interest => getLocalizedString(interest.name, lang)) && (
             <div className='mt-4'>
               <Title translationKey='additional.interests' color={themeColors[1]} />
               <div className='flex items-center flex-wrap gap-3 mt-4'>
                 {resumeData.interests.map((interest, index) => {
-                  const interestText = interest.name?.[lang]?.trim();
+                  const interestText = getLocalizedString(interest.name, lang);
                   return interestText ? (
                     <div
                       key={`interest_${index}`}

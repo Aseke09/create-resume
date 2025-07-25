@@ -3,7 +3,7 @@ import { LuPlus, LuTrash2 } from "react-icons/lu";
 import { useTranslation } from "react-i18next";
 import Input from "../../../components/Inputs/Input";
 import RatingInput from "../../../components/ResumeSections/RatingInput"; // Make sure the path is correct
-import { normalizeLang } from "../../../utils/localization";
+import { getLocalizedString, normalizeLang } from "../../../utils/localization";
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import {
   addSkills,
@@ -49,7 +49,7 @@ const SkillsInfoForm: FC = () => {
                 label={t("skills.name")}
                 placeholder={t("skills.namePlaceholder")}
                 type="text"
-                value={skill.name[lang] || ""}
+                value={getLocalizedString(skill.name, lang)}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleSkillsChange(index, e.target.value)
                 }

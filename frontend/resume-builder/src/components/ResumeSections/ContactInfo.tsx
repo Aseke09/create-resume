@@ -16,7 +16,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ icon, iconBG, value }) => {
         {icon}
       </div>
 
-      <p className='flex-1 text-[12px] font-medium break-all'>{value}</p>
+      <p className='flex-1 text-[15px] font-medium break-all'>{value}</p>
     </div>
   );
 };

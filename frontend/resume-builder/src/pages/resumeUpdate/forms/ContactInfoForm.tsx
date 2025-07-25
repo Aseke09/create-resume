@@ -3,7 +3,7 @@ import Input from "../../../components/Inputs/Input";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { patchLocalized, updateContactInfo } from "../../../features/resume/resumeSlice";
-import { normalizeLang } from './../../../utils/localization';
+import { getLocalizedString, normalizeLang } from './../../../utils/localization';
 
 const ContactInfoForm: FC = () => {
   const { t, i18n } = useTranslation('profileInfo');
@@ -40,7 +40,8 @@ const ContactInfoForm: FC = () => {
             label={t("contactInfo.address", "Address")}
             placeholder={t("contactInfo.addressPlaceholder", "Short Address")}
             type="text"
-            value={contactInfo.location?.[lang] || ""}
+            // value={contactInfo.location?.[lang] || ""}
+            value={getLocalizedString(contactInfo.location, lang)}
             onChange={handleChange("location")}
           />
         </div>

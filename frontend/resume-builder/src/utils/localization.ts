@@ -21,5 +21,12 @@ export const getLocalizedString = (
   lang: keyof LocalizedString
 ): string => {
   if (!localized || typeof localized !== 'object') return '';
-  return localized[lang] ?? '';
+
+  const prioritizedOrder: (keyof LocalizedString)[] = [lang, 'ru', 'kz', 'en'];
+
+  for (const key of prioritizedOrder) {
+    const value = localized[key];
+    if (value?.trim()) return value;
+  }
+  return '';
 };
