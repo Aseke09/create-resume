@@ -14,26 +14,22 @@ const uploadImage = async ({ file, auth = false, resumeId }: UploadOptions): Pro
   try {
     const formData = new FormData();
     formData.append('profileImage', file);
-    console.log('FormData entries:', [...formData.entries()]);
 
     if (auth) {
-      if (!resumeId) throw new Error('resumeId is required for authenticated upload');
+      const endpoint = resumeId 
+        ? API_PATHS.RESUME.UPLOAD_IMAGES(resumeId)
+        : API_PATHS.IMAGE.UPLOAD_IMAGE;
 
-      const response = await axiosInstance.post(API_PATHS.RESUME.UPLOAD_IMAGES(resumeId),
-        formData,
-      );
+      const response = await axiosInstance.post(endpoint, formData);
+    
       const imageId = response.data?.profileImageId || response.data?.imageId;
-      console.log('uploadImage response.data:', response);
-      console.log(resumeId)
-      console.log('Sending request to:', API_PATHS.RESUME.UPLOAD_IMAGES(resumeId));
-      console.log('Axios headers:', axiosInstance.defaults.headers);
+      
       return  { imageId };
     } else {
       const response = await axiosPublic.post(API_PATHS.IMAGE.UPLOAD_IMAGE, formData,
     )
       const imageId = response.data?.profileImageId || response.data?.imageId;
-      console.log('uploadImage response.data:', response.data);
-      console.log('API Endpoint:', API_PATHS.IMAGE.UPLOAD_IMAGE);
+      
       return { imageId };
     }
     

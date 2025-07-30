@@ -5,10 +5,11 @@ import type { FC } from 'react';
 import LanguageSwitcher from '../LanguageSwitcher';
 
 interface NavbarProps {
-  activeMenu?: string; 
+  activeMenu?: string;
+  onEditProfile?: () => void; 
 }
 
-const Navbar: FC<NavbarProps> = ({ activeMenu }) => {
+const Navbar: FC<NavbarProps> = ({ activeMenu, onEditProfile }) => {
     const { t } = useTranslation('landing');
 
   return (
@@ -23,7 +24,7 @@ const Navbar: FC<NavbarProps> = ({ activeMenu }) => {
         </Link>
         <div className='flex gap-6'>
           <LanguageSwitcher />
-          <ProfileInfoCard />
+          <ProfileInfoCard onEditProfile={onEditProfile}/>
           </div> 
       </div> 
     </div>

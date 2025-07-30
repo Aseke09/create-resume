@@ -1,16 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-// import axiosInstance from '../../utils/axiosInstance';
-// import { API_PATHS } from '../../utils/apiPaths';
 import DashboardLayout from '../../components/layouts/DashboardLayout';
 import {LuCirclePlus} from 'react-icons/lu';
-// import moment from 'moment';
 import CreateResumeForm from './CreateResumeForm';
 import Modal from '../../components/Modal';
 import ResumeSummaryCard from '../../components/cards/ResumeSummaryCard';
-// import type { Resume } from './types';
 import { useTranslation } from 'react-i18next';
-// import { getLocalizedString } from '../../utils/localization';
+
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import {
   selectResumes,         

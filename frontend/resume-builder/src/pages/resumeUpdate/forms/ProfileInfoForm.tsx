@@ -37,7 +37,6 @@ const ProfileInfoForm: FC<ProfileInfoFormProps> = ({
     setProfileImgFile(url);
     setLocalImageId(url);
     dispatch(updateProfileInfo({ profilePreviewUrl: url ?? undefined }));
-    console.log(resumeId)
   }
 
   useEffect(() => {
@@ -61,7 +60,6 @@ const ProfileInfoForm: FC<ProfileInfoFormProps> = ({
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           <Input
-            // value={profileInfo.fullName?.[lang] || ''}
             value={getLocalizedString(profileInfo.fullName, lang)}
             onChange={({ target }) => updateLocalizedField('fullName', target.value)}
             label={t('profile.fullName')}
@@ -70,7 +68,6 @@ const ProfileInfoForm: FC<ProfileInfoFormProps> = ({
           />
 
           <Input
-            // value={profileInfo.designation?.[lang] || ''}
             value={getLocalizedString(profileInfo.designation, lang)}
             onChange={({ target }) => updateLocalizedField('designation', target.value)}
             label={t('profile.designation')}
@@ -87,7 +84,6 @@ const ProfileInfoForm: FC<ProfileInfoFormProps> = ({
               placeholder={t('profile.summaryPlaceholder')}
               className='form-input'
               rows={4}
-              // value={profileInfo.summary?.[lang] || ''}
               value={getLocalizedString(profileInfo.summary, lang)}
               onChange={({ target }) => updateLocalizedField('summary', target.value)}
             />

@@ -89,4 +89,40 @@ const getUserProfile = async (req, res) => {
     }
 };
 
-module.exports = { registerUser, loginUser, getUserProfile };
+const updateUserProfile = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' })
+    }
+
+    const { name, email, profileImageId } = req.body;
+
+    if (email && email !== user.email) {
+      const emailExists = await User.findOne({ email });
+      if (emailExists) {
+        return res.status(400).json({ message: 'Email is already taken' });
+      }
+    }
+
+    user.name = name || user.name;
+    user.email = email || user.email;
+    user.profileImageUrl = profileImageId || user.profileImageUrl;
+
+    const updateUser = await user.save();
+
+    res.json({
+      _id: updateUser._id,
+      name: updateUser.name,
+      email: updateUser.email,
+      profileImageUrl: updateUser.profileImageUrl,
+      token: generateToken(updateUser._id),
+    });
+  } catch (error) {
+    console.error('Update profile error:', error);
+    res.status(500).json({ message: 'Server error', error: error.message })
+  }
+}
+
+module.exports = { registerUser, loginUser, getUserProfile, updateUserProfile };

@@ -2,7 +2,6 @@ import { useRef, type FC, type ChangeEvent, useState, useEffect } from 'react'
 import { LuUser, LuUpload, LuTrash } from 'react-icons/lu';
 import { BASE_URL } from '../../utils/apiPaths';
 import uploadImage from '../../utils/uploadImage';
-// import { useAppDispatch } from '../../store/hooks';
 
 interface Props {
   imageId: string | null;
@@ -25,10 +24,6 @@ const ProfilePhotoSelector: FC<Props> = ({ imageId, setImageId, auth = false, re
 
     const handleImageChange = async (event: ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
-        console.log("Selected file:", file);
-        console.log("Type:", typeof file);
-        console.log("Instanceof File:", file instanceof File);
-        console.log('resumeId:', resumeId)
         if(!file) return
 
         const localPreview = URL.createObjectURL(file);
@@ -36,7 +31,7 @@ const ProfilePhotoSelector: FC<Props> = ({ imageId, setImageId, auth = false, re
 
         try {
           const { imageId } = await uploadImage({ file, auth, resumeId });
-          console.log('Returned imageId:', imageId);
+          
           if(imageId) {
             setImageId?.(imageId);
             setTimeout(() => {

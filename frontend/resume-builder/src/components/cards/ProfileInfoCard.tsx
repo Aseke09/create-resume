@@ -1,11 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { type FC } from 'react';
 import { clearUser } from '../../features/user/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { RootState } from '../../store/store';
 import { BASE_URL } from '../../utils/apiPaths';
 
-const ProfileInfoCard = () => {
+interface ProfileInfoCardProps {
+  onEditProfile?: () => void;
+}
+
+const ProfileInfoCard: FC<ProfileInfoCardProps> = ({ onEditProfile }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { t } = useTranslation('general');
@@ -41,12 +46,20 @@ const ProfileInfoCard = () => {
 
       <div>
         <div className='text-[15px] font-bold leading-3'>{user.name || ''}</div>
-        <button
-          className='text-purple-500 text-sm font-semibold cursor-pointer hover:underline'
-          onClick={handleLogout}
-        >
-          {t('logout')}
-        </button>
+        <div className='flex gap-3 mt-1'>
+          <button
+                className='text-blue-500 text-sm font-semibold cursor-pointer hover:underline'
+                onClick={onEditProfile}
+              >
+                {t('edit')}
+          </button>
+          <button
+            className='text-purple-500 text-sm font-semibold cursor-pointer hover:underline'
+            onClick={handleLogout}
+          >
+            {t('logout')}
+          </button>
+        </div>
       </div>
     </div>
   )

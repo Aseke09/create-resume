@@ -40,7 +40,6 @@ const ContactInfoForm: FC = () => {
             label={t("contactInfo.address", "Address")}
             placeholder={t("contactInfo.addressPlaceholder", "Short Address")}
             type="text"
-            // value={contactInfo.location?.[lang] || ""}
             value={getLocalizedString(contactInfo.location, lang)}
             onChange={handleChange("location")}
           />

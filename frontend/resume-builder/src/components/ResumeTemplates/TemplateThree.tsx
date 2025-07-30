@@ -176,7 +176,7 @@ const TemplateThre: FC<TemplateOneProps> = ({
       <div className='mx-10 pb-5'>
           <div>
             <Title translationKey='profile.summary' color={themeColors[1]} />
-            <p className='text-sm font-medium'>
+            <p className='text-sm font-medium whitespace-pre-line'>
               {getLocalizedString(resumeData.profileInfo.summary, lang)}
             </p>
           </div>

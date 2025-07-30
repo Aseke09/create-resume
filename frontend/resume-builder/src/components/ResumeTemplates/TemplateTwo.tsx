@@ -108,13 +108,11 @@ const TemplateTwo: FC<TemplateTwoProps> = ({
 
         <div>
           <div className='grid grid-cols-12 items-center'>
-            <div className='col-span-8 mr-2'>
+            <div className='col-span-7 mr-2'>
               <h2 className='text-2xl font-bold'>
-                {/* {resumeData.profileInfo.fullName?.[lang] || ''} */}
                 {getLocalizedString(resumeData.profileInfo.fullName, lang)}
               </h2>
               <p className='text-[15px] font-semibold mb-2'>
-                {/* {resumeData.profileInfo.designation?.[lang] || ''} */}
                 {getLocalizedString(resumeData.profileInfo.designation, lang)}
               </p>
 
@@ -125,7 +123,7 @@ const TemplateTwo: FC<TemplateTwoProps> = ({
               />
             </div>
 
-            <div className='col-span-4 flex flex-col gap-5 mt-2 mr-2'>
+            <div className='col-span-5 flex flex-col gap-5 mt-2 mr-2'>
               <ContactInfo
                 icon={<LuMail/>}
                 iconBG={themeColors[2]}
@@ -202,7 +200,7 @@ const TemplateTwo: FC<TemplateTwoProps> = ({
         <div className='col-span-8 pt-10 mr-10 pb-5'>
           <div>
             <Title translationKey='profile.summary' color={themeColors[1]} />
-            <p className='text-sm font-medium'>
+            <p className='text-sm font-medium whitespace-pre-line'>
               {getLocalizedString(resumeData.profileInfo.summary, lang)}
             </p>
           </div>

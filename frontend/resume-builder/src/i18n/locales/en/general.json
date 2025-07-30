@@ -1,6 +1,27 @@
 {
   "logout": "Logout",
    "add_new_resume": "Add New Resume",
+   "edit": "Edit",
+   "edit_profile": "Edit profile",
+   "edit_profile_below": "Edit your information below.",
+   "full_name": "Full Name",
+   "email": "Email",
+
+   "placeholder": {
+    "full_name": "Enter your full name",
+    "email": "Enter your email"
+  },
+   
+   "submit": "Update Profile",
+  "success": {
+    "updated": "Profile updated successfully."
+  },
+  "error": {
+    "full_name_required": "Full name is required.",
+    "user_exists": "A user with this email already exists.",
+    "unknown": "Something went wrong. Please try again."
+  },
+
    "resume": {
     "titlePlaceholder": "Resume title"
   },

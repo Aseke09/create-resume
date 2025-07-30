@@ -78,7 +78,6 @@ const SignUp: FC<SignUpProps> = ({ setCurrentPage }) => {
       dispatch(updateUser({ ...data, token: data.token }));
 
       if (isMounted.current) {
-        console.log('✅ Registration successful. Redirecting to dashboard...');
       navigate('/dashboard');
       }
     } catch (err: unknown) {
