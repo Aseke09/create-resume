@@ -13,7 +13,7 @@ import TitleInput from '../../components/Inputs/TitleInput';
 import { useTranslation } from 'react-i18next';
 import { useReactToPrint } from 'react-to-print';
 import { renderForm } from '../../utils/renderForm';
-import type { LocalizedString } from '../../utils/localization';
+import { getLocalizedString, type LocalizedString } from '../../utils/localization';
 import StepProgress from '../../components/StepProgress';
 import RenderResume from '../../components/ResumeTemplates/RenderResume';
 import ThemeSelector from './ThemeSelector';
@@ -101,9 +101,14 @@ const EditResume = () => {
     dispatch(goBack());               
   }
 };
+  const fullName = getLocalizedString(draft.profileInfo?.fullName || {}, lang);
+  const safeFileName = `${fullName.replace(/\s+/g, '_')}_Resume`;
 
-  const  reactToPrintFn = useReactToPrint({ contentRef: resumeDownloadedRef})
-
+  const reactToPrintFn = useReactToPrint({
+    contentRef: resumeDownloadedRef,
+    documentTitle: safeFileName,
+  })
+   
   return (
     <DashboardLayout>
       <div className='container mx-auto'>

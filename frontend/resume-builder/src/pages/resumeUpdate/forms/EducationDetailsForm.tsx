@@ -89,7 +89,6 @@ const EducationDetailsForm: FC = () => {
                 label={t("education.institution")}
                 placeholder="XYZ University"
                 type="text"
-                // value={education.institution?.[lang] || ""}
                 value={getLocalizedString(education.institution, lang)}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleLocalizedChange(index, 'institution', e.target.value)
