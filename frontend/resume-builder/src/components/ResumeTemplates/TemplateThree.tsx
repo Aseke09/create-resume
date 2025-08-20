@@ -116,15 +116,34 @@ const TemplateThre: FC<TemplateOneProps> = ({
                 <p className='text-[15px] font-semibold mb-2'>
                    {getLocalizedString(resumeData.profileInfo.designation, lang)}
                 </p>
-
+                  <div className='mb-3'>
                     <ContactInfo
                       icon={<LuMapPinHouse />}
                       iconBG={themeColors[2]}
-                      value={getLocalizedString(resumeData.contactInfo.location, lang)} 
+                      value={getLocalizedString(resumeData.contactInfo.location, lang)}
                     />
+                  </div>
+                  <div className='mb-3'>
+                    {resumeData.contactInfo.github && (
+                      <ContactInfo
+                        icon={<LuGithub />}
+                        iconBG={themeColors[2]}
+                        value={resumeData.contactInfo.github}
+                      />
+                    )}
+                  </div>
+                    
+                    {resumeData.contactInfo.website && (
+                      <ContactInfo
+                        icon={<LuRss />}
+                        iconBG={themeColors[2]}
+                        value={resumeData.contactInfo.website}
+                      />
+                    )}
                 </div> 
-
-                <div className='col-span-6 flex flex-col gap-3 '>
+                
+                <div className='col-span-6 gap-6 mt-3'>
+                   <div className='col-span-6 flex flex-col gap-3 '>
                    <ContactInfo
                      icon={<LuMail />}
                      iconBG={themeColors[2]}
@@ -136,7 +155,6 @@ const TemplateThre: FC<TemplateOneProps> = ({
                      value={resumeData.contactInfo.phone}
                    /> 
 
-                   {/* <div className=''> */}
                     {resumeData.contactInfo.linkedin && (
                         <ContactInfo
                         icon={<RiLinkedinLine />}
@@ -144,34 +162,12 @@ const TemplateThre: FC<TemplateOneProps> = ({
                         value={resumeData.contactInfo.linkedin}
                         />
                     )}
-              {/* </div> */}
-              </div>
-
-              
-              <div className='col-span-6'>
-                {resumeData.contactInfo.github && (
-                    <ContactInfo
-                       icon={<LuGithub />}
-                       iconBG={themeColors[2]}
-                       value={resumeData.contactInfo.github}
-                    />
-                )}
-              </div>
-              <div className='col-span-6'>
-                {resumeData.contactInfo.website && (
-                    <ContactInfo
-                       icon={<LuRss />}
-                       iconBG={themeColors[2]}
-                       value={resumeData.contactInfo.website}
-                    />
-                )}
-              </div>
+              </div> 
+                </div>
             </div>
           </div>
         </div>
       </div>
-
-      
 
       <div className='mx-10 pb-5'>
           <div>
