@@ -40,7 +40,8 @@ const ProfilePortal: FC<ProfilePortalProps> = ({ anchorEl, onClose, children }) 
 
             <div
               ref={popoverRef}
-              className='absolute z-50 bg-white shadow-lg rounded-xl p-3 min-w-[200px] transition-all'
+              className='absolute z-50 bg-white shadow-lg rounded-xl p-3 min-w-[200px] 
+              [transform-origin:top_left] animate-[scaleIn_0.15s_ease-out]'
               style={{ top: position.top, left: position.left}}
             >
               {children}

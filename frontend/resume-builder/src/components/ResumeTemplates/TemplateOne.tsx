@@ -237,7 +237,7 @@ const TemplateOne: FC<TemplateOneProps> = ({
           <div className='mt-4'>
               {resumeData.certifications?.some(p => p.title?.[lang]?.trim()) && (
                 <div className='mt-4'>
-                  <Title translationKey='projects.title' color={themeColors[1]} />
+                  <Title translationKey='certifications.title' color={themeColors[1]} />
                   {resumeData.certifications
                   .filter(p => p.title?.[lang]?.trim())
                   .map((data, index) => (
